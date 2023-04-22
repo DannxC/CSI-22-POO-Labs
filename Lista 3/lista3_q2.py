@@ -17,7 +17,6 @@ class D(B, C):
 obj = D()
 print(obj.who_am_i())  # Imprime "B"
 print(D.mro())  # Imprime a ordem de resolução de métodos
-#[<class 'D'>, <class 'B'>, <class 'C'>, <class 'A'>, <class 'object'>]
 
 # EXEMPLO 2
 class E:
@@ -45,4 +44,3 @@ class J(G, H, I):
 obj2 = J()
 print(obj2.who_am_i()) # Imprime "G"
 print(J.mro()) # Imprime a ordem de resolução de métodos
-#[<class 'J'>, <class 'G'>, <class 'E'>, <class 'H'>, <class 'I'>, <class 'F'>, <class 'object'>]
