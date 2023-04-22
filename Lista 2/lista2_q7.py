@@ -16,12 +16,11 @@ def primes():
             del D[q]
 
         q += 1 # check the next number for primality
-        print(D)
+        #print(D)
 
 
 primes_list = []
 for p in primes():
     primes_list.append(p)
-#     if p > 100: break
-
-# print(primes_list)
+    if p > 1000: break
+print(primes_list)
