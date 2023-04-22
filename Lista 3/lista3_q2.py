@@ -46,21 +46,3 @@ obj2 = J()
 print(obj2.who_am_i()) # Imprime "G"
 print(J.mro()) # Imprime a ordem de resolução de métodos
 #[<class 'J'>, <class 'G'>, <class 'E'>, <class 'H'>, <class 'I'>, <class 'F'>, <class 'object'>]
-
-class K:
-    def who_am_i(self):
-        return "K"
-
-class L(K):
-    pass
-
-class M(K):
-    def who_am_i(self):
-        return "M"
-
-class N(L, M):
-    pass
-
-obj3 = N()
-print(obj3.who_am_i()) # Imprime "M"
-print(N.mro()) # Imprime a ordem de resolução de métodos: [<class 'N'>, <class 'L'>, <class 'M'>, <class 'K'>, <class 'object'>]
