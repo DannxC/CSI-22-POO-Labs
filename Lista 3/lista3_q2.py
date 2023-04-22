@@ -1,0 +1,66 @@
+# EXEMPLO 1
+class A:
+    def who_am_i(self):
+        return "A"
+
+class B(A):
+    def who_am_i(self):
+        return "B"
+
+class C(A):
+    def who_am_i(self):
+        return "C"
+
+class D(B, C):
+    pass
+
+obj = D()
+print(obj.who_am_i())  # Imprime "B"
+print(D.mro())  # Imprime a ordem de resolução de métodos
+#[<class 'D'>, <class 'B'>, <class 'C'>, <class 'A'>, <class 'object'>]
+
+# EXEMPLO 2
+class E:
+    def who_am_i(self):
+        return "E"
+
+class F:
+    def who_am_i(self):
+        return "F"
+
+class G(E, F):
+    def who_am_i(self):
+        return "G"
+
+class H(E):
+    pass
+
+class I(F):
+    def who_am_i(self):
+        return "I"
+
+class J(G, H, I):
+    pass
+
+obj2 = J()
+print(obj2.who_am_i()) # Imprime "G"
+print(J.mro()) # Imprime a ordem de resolução de métodos
+#[<class 'J'>, <class 'G'>, <class 'E'>, <class 'H'>, <class 'I'>, <class 'F'>, <class 'object'>]
+
+class K:
+    def who_am_i(self):
+        return "K"
+
+class L(K):
+    pass
+
+class M(K):
+    def who_am_i(self):
+        return "M"
+
+class N(L, M):
+    pass
+
+obj3 = N()
+print(obj3.who_am_i()) # Imprime "M"
+print(N.mro()) # Imprime a ordem de resolução de métodos: [<class 'N'>, <class 'L'>, <class 'M'>, <class 'K'>, <class 'object'>]
